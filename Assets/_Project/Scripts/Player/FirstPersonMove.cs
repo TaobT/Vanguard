@@ -82,14 +82,27 @@ public class FirstPersonMove : NetworkBehaviour
     public LayerMask environmentMask;
 
     private Rigidbody rb;
-    private CapsuleCollider collider;
+    private CapsuleCollider capsuleCollider;
     private FirstPersonLook camManager;
 
     private Vector2 targetMoveInputVector;
     private Vector3 moveInputVector;
     private bool inputJump;
 
-    public void Jump(InputAction.CallbackContext context) {
+    /// <summary>
+    /// Called via Unity Events defined in editor on PlayerInput component
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        targetMoveInputVector = context.ReadValue<Vector2>();
+    }
+
+    /// <summary>
+    /// Called via Unity Events defined in editor on PlayerInput component
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnJump(InputAction.CallbackContext context) {
         var newValue = context.ReadValue<float>() == 1;
 
         if (newValue != inputJump) {
@@ -122,7 +135,12 @@ public class FirstPersonMove : NetworkBehaviour
     }
 
     private bool inputCrouch;
-    public void Crouch(InputAction.CallbackContext context) {
+
+    /// <summary>
+    /// Called via Unity Events defined in editor on PlayerInput component
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnCrouch(InputAction.CallbackContext context) {
         var newValue = context.ReadValue<float>() == 1;
 
         if (newValue != inputCrouch) {
@@ -153,23 +171,13 @@ public class FirstPersonMove : NetworkBehaviour
         if (!isLocalPlayer)
         {
             GetComponentInChildren<Canvas>().enabled = false;
-            GetComponent<FirstPersonLook>().pilotActionControls.Disable();
-        }
-        else
-        {
-            // TODO: *.performed and *.canceled are mapped to the same function because it's used as a toggle.
-            //    We should probably find a better way to handle this (refactor out JumpStart() and JumpEnd()
-            //    functions ?)
-            GetComponent<FirstPersonLook>().pilotActionControls.VanguardPilot.Jump.performed += Jump;
-            GetComponent<FirstPersonLook>().pilotActionControls.VanguardPilot.Jump.canceled += Jump;
-            GetComponent<FirstPersonLook>().pilotActionControls.VanguardPilot.Crouch.performed += Crouch;
-            GetComponent<FirstPersonLook>().pilotActionControls.VanguardPilot.Crouch.canceled += Crouch;
+            GetComponent<PlayerInput>().DeactivateInput();
         }
 
         rb = GetComponent<Rigidbody>();
         camManager = GetComponent<FirstPersonLook>();
-        collider = GetComponent<CapsuleCollider>();
-        wallrunCheckLength = collider.radius;
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        wallrunCheckLength = capsuleCollider.radius;
     }
 
     void FixedUpdate() {
@@ -178,9 +186,9 @@ public class FirstPersonMove : NetworkBehaviour
             return;
         }
 
-        targetMoveInputVector = GetComponent<FirstPersonLook>().pilotActionControls.VanguardPilot.Walk.ReadValue<Vector2>();
         moveInputVector = Vector2.Lerp(moveInputVector, targetMoveInputVector, Time.fixedDeltaTime * 1/acceleration);
-        bool newIsGrounded = Physics.Raycast(transform.position, Vector3.down, out groundHit, (transform.localScale.y * collider.height) * 0.53f, environmentMask);
+
+        bool newIsGrounded = Physics.Raycast(transform.position, Vector3.down, out groundHit, (transform.localScale.y * capsuleCollider.height) * 0.53f, environmentMask);
         if (newIsGrounded != isGrounded) {
             if (newIsGrounded)
                 OnEnterGround();
@@ -258,7 +266,7 @@ public class FirstPersonMove : NetworkBehaviour
             
             RaycastHit fwdHit;
             bool fwdCheck = Physics.Raycast(transform.position, transform.forward, out fwdHit, wallrunCheckLength, environmentMask) || 
-                (wallrunState != WallrunState.None && Physics.Raycast(transform.position - (Vector3.up * ((transform.localScale.y * collider.height) - collider.radius)), transform.forward, out fwdHit, wallrunCheckLength-0.1f, environmentMask));
+                (wallrunState != WallrunState.None && Physics.Raycast(transform.position - (Vector3.up * ((transform.localScale.y * capsuleCollider.height) - capsuleCollider.radius)), transform.forward, out fwdHit, wallrunCheckLength-0.1f, environmentMask));
 
             List<WallCheck> checks = new List<WallCheck>() {
                 new WallCheck() { State = WallrunState.Left, Hit = leftCheck, HitInfo = leftHit },

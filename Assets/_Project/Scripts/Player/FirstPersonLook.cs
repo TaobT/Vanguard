@@ -21,13 +21,9 @@ public class FirstPersonLook : NetworkBehaviour
     public float targetDutch;
     public float targetHeight = 1;
 
-    // TODO: This should be put somewhere more logical where it can be accessed by
-    //    both FirstPersonLook.cs and FirstPersonMove.cs
-    public PilotActionControls pilotActionControls;
-
-    private void Awake()
+    public void OnLook(InputAction.CallbackContext context)
     {
-        pilotActionControls = new PilotActionControls();
+        inputVector = context.ReadValue<Vector2>();
     }
 
     void Start()
@@ -35,7 +31,6 @@ public class FirstPersonLook : NetworkBehaviour
         if (!isLocalPlayer)
         {
             cam.enabled = false;
-            pilotActionControls.Disable();
         }
         else
         {
@@ -43,23 +38,6 @@ public class FirstPersonLook : NetworkBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        pilotActionControls?.Enable();
-    }
-
-    private void OnDisable()
-    {
-        pilotActionControls?.Disable();
-    }
-    public void EnableControls()
-    {
-        pilotActionControls.Enable();
-    }
-    public void DisableControls()
-    {
-        pilotActionControls.Disable();
-    }
     void Update()
     {
         if (!isLocalPlayer)
@@ -69,8 +47,6 @@ public class FirstPersonLook : NetworkBehaviour
 
         if (lookEnabled)
         {
-            inputVector = pilotActionControls.VanguardPilot.Mouse.ReadValue<Vector2>();
-
             float mouseX = inputVector.x * horizontalSpeed;
             float mouseY = inputVector.y * verticalSpeed;
 

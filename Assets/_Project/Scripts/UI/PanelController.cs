@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class PanelController : MonoBehaviour
 {
-    [SerializeField] GameObject startPanel;
+    /// <summary>
+    /// A list of all panels to be managed by this controller.  The first panel will be enabled by
+    ///     default, and the rest will be disabled
+    /// </summary>
+    [SerializeField] List<GameObject> panels;
     GameObject currentPanel;
 
     private void Start()
     {
-        startPanel?.SetActive(true);
-        currentPanel = startPanel;
+        foreach (GameObject panel in panels)
+        {
+            panel.SetActive(false);
+        }
+
+        panels[0]?.SetActive(true);
+        currentPanel = panels[0];
     }
 
     public void ChangePanel(GameObject newPanel)

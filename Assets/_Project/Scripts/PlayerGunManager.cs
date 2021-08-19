@@ -1,16 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Mirror;
+using UnityEngine.InputSystem;
+
 public class PlayerGunManager : NetworkBehaviour 
 {
     private Weapon weapon;
     private GameObject projectilePrefab;
     private Transform shootingPoint;
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            weapon?.ShootInputDown();
+        }
+        else if (context.canceled)
+        {
+            weapon?.ShootInputUp();
+        }
+    }
+
+    public void OnReload(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            weapon?.ReloadInputUpdate();
+        }
+    }
+
     void Start()
     {
-        
         weapon = GetComponentInChildren<Weapon>();
         if (!isLocalPlayer)
         {
@@ -24,13 +43,6 @@ public class PlayerGunManager : NetworkBehaviour
         }
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0))
-            weapon.ShootInputDown();
-        if (Input.GetMouseButtonUp(0))
-            weapon.ShootInputUp();
-        if (Input.GetKeyDown(KeyCode.R)) weapon.ReloadInputUpdate();
-    }
     [Command]
     public void CmdShootCommand()
     {

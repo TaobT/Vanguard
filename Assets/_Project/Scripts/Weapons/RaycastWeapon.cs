@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaycastWeapon : Weapon
 {
     public GameObject hitEffectPrefab;
-    private Camera camera;
+    private new Camera camera; // `new` is safe to use, as Component.camera is deprecated and is okay to hide
     
     void Start()
     {
