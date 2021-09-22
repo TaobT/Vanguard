@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.discord.game-sdk": {
-      "version": "file:C:/Users/HumN/Desktop/Discord-Game-SDK-master",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,

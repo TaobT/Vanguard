@@ -7,6 +7,7 @@ public class TargetHealth : NetworkBehaviour
 {
     public float MaxHealth;
     [SyncVar(hook ="HealthChanged")] float Health;
+    public AudioSource[] Sounds;
     public Text HealthText;
 
     // Start is called before the first frame update
@@ -19,15 +20,23 @@ public class TargetHealth : NetworkBehaviour
     {
         Health -= Damage;
         if (Health < 0) Die();
+        else RpcPlaySound(0);
     }
     [Server]
     public void Die()
     {
         Health = MaxHealth;
         GetComponent<Target>().ResetTarget();
+        RpcPlaySound(1);
     }
     public void HealthChanged(float oldHealth,float newHealth)
     {
         HealthText.text = newHealth.ToString();
+    }
+    [ClientRpc]
+    void RpcPlaySound(int index)
+    {
+        Debug.Log("should play sound");
+        Sounds[index].Play();
     }
 }

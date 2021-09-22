@@ -18,6 +18,7 @@ namespace Vanguard
             if (isServer) mm.NewPlayerConnected(gameObject);
             if (isLocalPlayer)
             {
+                GetComponentInChildren<AudioListener>(true).enabled=true;
                 mm.blueScoreText = blueScoreText;
                 mm.redScoreText = redScoreText;
                 mm.winScreenText = winScreenText;

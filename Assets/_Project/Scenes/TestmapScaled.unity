@@ -633,6 +633,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 545900392174598199, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545900392174598199, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545900392174598199, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545900392174598199, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4849185879382605192, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
       propertyPath: overlayColor.b
       value: 0
@@ -648,6 +664,18 @@ PrefabInstance:
     - target: {fileID: 6670895066311098646, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
       propertyPath: m_Name
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980417078796735119, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eab5d903d06970e44970f13878770c86, type: 3}
+    - target: {fileID: 6980417078796735119, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980417078796735119, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8256800207295494727, guid: a3a79d507dec7a649a2a2e95e6396155, type: 3}
       propertyPath: speed
