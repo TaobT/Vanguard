@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5852578440144159359}
   - component: {fileID: 5559996849371897209}
   - component: {fileID: 3638636568613421156}
+  - component: {fileID: 5042303462429715852}
   - component: {fileID: 1990362138189793419}
-  - component: {fileID: -5713268605340412682}
   m_Layer: 0
   m_Name: SampleNade
   m_TagString: Untagged
@@ -133,39 +133,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1990362138189793419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905929833826866977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _compress: 1
-  _synchronizeParent: 0
-  _interpolation: 2
-  _extrapolation: 0
-  _enableTeleport: 0
-  _teleportThreshold: 0
-  _clientAuthoritative: 1
-  _sendToOwner: 1
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
---- !u!114 &-5713268605340412682
+--- !u!114 &5042303462429715852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkObserver: {fileID: 0}
-  _prefabId: -1
+  _prefabId: 2
   _scenePathHash: 0
   _sceneId: 0
   _sceneNetworkObjects: []
@@ -187,4 +155,20 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     LocalScale: {x: 0, y: 0, z: 0}
   _isNetworked: 1
-  ChildNetworkObjects: []
+--- !u!114 &1990362138189793419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905929833826866977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _compressSmall: 1
+  _enableTeleport: 0
+  _teleportThreshold: 0
+  _clientAuthoritative: 1
+  _sendToOwner: 1

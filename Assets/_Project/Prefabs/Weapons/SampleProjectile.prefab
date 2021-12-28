@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 3209555970205912902}
   - component: {fileID: 8704456195549633846}
   - component: {fileID: -1975437226733119805}
-  - component: {fileID: 6304901950621662304}
   m_Layer: 0
   m_Name: SampleProjectile
   m_TagString: Untagged
@@ -211,46 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _compress: 1
-  _synchronizeParent: 0
-  _interpolation: 2
-  _extrapolation: 0
+  _compressSmall: 1
   _enableTeleport: 0
   _teleportThreshold: 0
   _clientAuthoritative: 1
   _sendToOwner: 1
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
---- !u!114 &6304901950621662304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8203581229785904781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NetworkObserver: {fileID: 0}
-  _prefabId: -1
-  _scenePathHash: 0
-  _sceneId: 0
-  _sceneNetworkObjects: []
-  SceneTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    LocalScale: {x: 0, y: 0, z: 0}
-  _isNetworked: 1
-  ChildNetworkObjects: []

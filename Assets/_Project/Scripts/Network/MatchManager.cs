@@ -21,7 +21,6 @@ namespace Vanguard
         
         public void NewPlayerConnected(Health health)
         {
-            Debug.Log("Player Connected!");
             if (redPlayerCount > bluePlayerCount)
             {
                 blueTeamHealth.Add(health);

@@ -43,7 +43,7 @@ public class NetworkStarter : MonoBehaviour
                 Debug.Log("Dedicated Server...");
                 _networkManager.TransportManager.Transport.SetServerBindAddress("localhost");
                 _networkManager.ServerManager.StartConnection();
-                Debug.Log($"Address: {_networkManager.TransportManager.Transport.GetServerBindAddress()}:{_networkManager.TransportManager.Transport.GetPort()}");
+                Debug.Log($"Addres: {_networkManager.TransportManager.Transport.GetServerBindAddress()}:{_networkManager.TransportManager.Transport.GetPort()}");
             break;
         }
 

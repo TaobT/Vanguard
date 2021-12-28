@@ -8443,26 +8443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _compress: 1
-  _synchronizeParent: 0
-  _interpolation: 2
-  _extrapolation: 0
+  _compressSmall: 1
   _enableTeleport: 0
   _teleportThreshold: 0
   _clientAuthoritative: 1
   _sendToOwner: 1
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
 --- !u!1 &7723995027383627381
 GameObject:
   m_ObjectHideFlags: 0
@@ -8486,7 +8471,6 @@ GameObject:
   - component: {fileID: -3056897453288499285}
   - component: {fileID: -7242417593011867789}
   - component: {fileID: -9007701027782926878}
-  - component: {fileID: -9132875341252110051}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -8919,26 +8903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _compress: 1
-  _synchronizeParent: 0
-  _interpolation: 2
-  _extrapolation: 0
+  _compressSmall: 1
   _enableTeleport: 0
   _teleportThreshold: 0
   _clientAuthoritative: 1
   _sendToOwner: 1
-  _positionSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _rotationSnapping:
-    X: 0
-    Y: 0
-    Z: 0
-  _scaleSnapping:
-    X: 0
-    Y: 0
-    Z: 0
 --- !u!114 &-9007701027782926878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8951,34 +8920,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cac635f24954048aad3a6ff9110beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 5961502210735603282}
+  _animator: {fileID: 0}
   _smoothFloats: 1
   _synchronizeInterval: 0.1
   _clientAuthoritative: 1
   _sendToOwner: 0
---- !u!114 &-9132875341252110051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723995027383627381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NetworkObserver: {fileID: 0}
-  _prefabId: -1
-  _scenePathHash: 0
-  _sceneId: 0
-  _sceneNetworkObjects: []
-  SceneTransformProperties:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    LocalScale: {x: 0, y: 0, z: 0}
-  _isNetworked: 1
-  ChildNetworkObjects: []
 --- !u!1 &7973584731485713676
 GameObject:
   m_ObjectHideFlags: 0
