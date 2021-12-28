@@ -17,14 +17,9 @@ namespace Vanguard
 
         public Transform GunModel;
 
-        private void Start(){
-            mm = FindObjectOfType<MatchManager>();
-            mm.NewPlayerConnected(this);
-        }
-
         public override void OnStartClient(){
             mm = FindObjectOfType<MatchManager>();
-            // mm.NewPlayerConnected(this);
+            mm.NewPlayerConnected(this);
             if (IsOwner)
             {
                 mm.blueScoreText = blueScoreText;

@@ -162,7 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _reliableMTU: 1200
   _unreliableMTU: 1200
-  _serverBindsAll: 1
   _serverBindAddress: localhost
   _port: 7770
   _maximumClients: 4095
@@ -180,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211a9f6ec51ddc14f908f5acc0cd0423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 253629118384193890, guid: 8f79257c56677dd4bb39a8a7c90e53b9, type: 3}
+  _playerPrefab: {fileID: 926421371589471802, guid: 8f79257c56677dd4bb39a8a7c90e53b9, type: 3}
   _spawns: []
 --- !u!114 &632761437
 MonoBehaviour:
@@ -531,6 +530,7 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
+  ChildNetworkObjects: []
 --- !u!1001 &5256730503854538222
 PrefabInstance:
   m_ObjectHideFlags: 0

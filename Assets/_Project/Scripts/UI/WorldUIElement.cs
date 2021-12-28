@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 namespace Vanguard.UI
 {
-    public class WorldUIElement : MonoBehaviour
+    public class WorldUIElement : NetworkBehaviour
     {
         [SerializeField]
         GameObject camera;
@@ -16,6 +17,11 @@ namespace Vanguard.UI
         //     }
 
         // }
+        public override void OnStartClient(){
+            if(!base.IsOwner) enabled = false;
+            base.OnStartClient();
+        }
+
         public void Start()
         {
             camera = Camera.main.gameObject;
