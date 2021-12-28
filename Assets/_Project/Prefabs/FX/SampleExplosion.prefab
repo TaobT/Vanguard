@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1318222460222016163}
   - component: {fileID: 6868440473323825193}
   - component: {fileID: 378430110375922359}
-  - component: {fileID: -4712200874801222857}
+  - component: {fileID: -788623539086114217}
   m_Layer: 0
   m_Name: SampleExplosion
   m_TagString: Untagged
@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-4712200874801222857
+--- !u!114 &-788623539086114217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4885,3 +4885,4 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     LocalScale: {x: 0, y: 0, z: 0}
   _isNetworked: 1
+  ChildNetworkObjects: []

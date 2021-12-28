@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
-using FishNet.Serializing;
 namespace Vanguard
 {
     public class Health : NetworkBehaviour
@@ -17,15 +16,15 @@ namespace Vanguard
 
         public Transform GunModel;
 
-        private void Start(){
-            mm = FindObjectOfType<MatchManager>();
-            mm.NewPlayerConnected(this);
-        }
+        // private void Start(){
+        //     mm = FindObjectOfType<MatchManager>();
+        //     mm.NewPlayerConnected(this);
+        // }
 
         public override void OnStartClient(){
             mm = FindObjectOfType<MatchManager>();
-            // mm.NewPlayerConnected(this);
-            if (IsOwner)
+            mm.NewPlayerConnected(this);
+            if (base.IsOwner)
             {
                 mm.blueScoreText = blueScoreText;
                 mm.redScoreText = redScoreText;
@@ -73,7 +72,7 @@ namespace Vanguard
         }
         public void OnDestroy()
         {
-            if (!IsServer) return;
+            if (!base.IsServer) return;
             mm.Disconnect(team);
         }
         [ServerRpc]

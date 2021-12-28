@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8669275624924799882}
   - component: {fileID: 3660438661444607624}
   - component: {fileID: 1904581788058700799}
-  - component: {fileID: -6634391299416032023}
+  - component: {fileID: -6824322522897859128}
   m_Layer: 0
   m_Name: gunshot
   m_TagString: Untagged
@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-6634391299416032023
+--- !u!114 &-6824322522897859128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4885,3 +4885,4 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 0}
     LocalScale: {x: 0, y: 0, z: 0}
   _isNetworked: 1
+  ChildNetworkObjects: []

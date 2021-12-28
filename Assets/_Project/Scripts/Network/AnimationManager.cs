@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FishNet.Object;
 //manages animations wow
 namespace Vanguard {
-    public class AnimationManager : NetworkBehaviour
+    public class AnimationManager : MonoBehaviour
     {
 
         public Animator animator;

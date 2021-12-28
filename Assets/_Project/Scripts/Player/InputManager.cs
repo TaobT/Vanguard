@@ -81,7 +81,7 @@ namespace Vanguard
 
         public void OnLookInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 LookVector = context.ReadValue<Vector2>();
             }
@@ -89,7 +89,7 @@ namespace Vanguard
 
         public void OnWalkInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 WalkVector = context.ReadValue<Vector2>();
             }
@@ -97,7 +97,7 @@ namespace Vanguard
 
         public void OnJumpInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 InvokeCancelableAction(context, OnJumpStarted, OnJumpStopped);
             }
@@ -105,7 +105,7 @@ namespace Vanguard
 
         public void OnCrouchInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 InvokeCancelableAction(context, OnCrouchStarted, OnCrouchStopped);
             }
@@ -113,7 +113,7 @@ namespace Vanguard
 
         public void OnShootInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 InvokeCancelableAction(context, OnShootStarted, OnShootStopped);
             }
@@ -121,7 +121,7 @@ namespace Vanguard
 
         public void OnReloadInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 OnReloadStarted?.Invoke();
             }
@@ -129,7 +129,7 @@ namespace Vanguard
 
         public void OnGrenadeInput(InputAction.CallbackContext context)
         {
-            if (IsOwner)
+            if (base.IsOwner)
             {
                 InvokeCancelableAction(context, OnGrenadeStarted, OnGrenadeStopped);
             }

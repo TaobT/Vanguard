@@ -16,7 +16,7 @@ namespace Vanguard
         public Rigidbody playerRigdbody;
 
         public override void OnStartClient(){
-            if (!IsOwner)
+            if (!base.IsOwner)
             {
                 enabled = false;
             }
@@ -31,15 +31,16 @@ namespace Vanguard
         private void GrenadeTriggerUp()
         {
             CmdThrowCommand(gameObject.transform.position + gameObject.transform.forward * 2, Camera.main.transform.rotation, playerRigdbody.velocity);
-
         }
 
         [ObserversRpc]
         public void CmdThrowCommand(Vector3 Position, Quaternion Rotation, Vector3 playerVelocity)
         {
+            Debug.Log("Spawning...");
             GameObject grenadeObject = Instantiate(grenadePrefab, Position, Rotation);
             grenadeObject.GetComponent<Rigidbody>().AddForce(playerVelocity, ForceMode.VelocityChange);
             Spawn(grenadeObject);
+            Debug.Log("Spawned");
         }
     }
 }
